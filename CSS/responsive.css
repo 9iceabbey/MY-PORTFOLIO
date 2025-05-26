@@ -1,0 +1,288 @@
+/* Responsive Styles */
+
+/* Base Tablet Styles */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-base: 15px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  
+  /* Sections */
+  section {
+    padding: var(--space-6) 0;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: var(--header-height);
+  }
+  
+  .hero-content {
+    order: 2;
+    margin-top: var(--space-5);
+  }
+  
+  .hero-image {
+    order: 1;
+    margin-top: var(--space-6);
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  /* About Section */
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-image {
+    margin-bottom: var(--space-4);
+  }
+  
+  .stats-container {
+    justify-content: center;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Portfolio Grid */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Contact Section */
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-info {
+    margin-bottom: var(--space-5);
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  /* Navigation */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-3) 0;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Toggle animation */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* Hero Section */
+  .hero-image img {
+    height: auto;
+    max-height: 400px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Portfolio Grid */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-nav {
+    margin-top: var(--space-3);
+    justify-content: center;
+  }
+  
+  /* Testimonials */
+  .testimonials-slider {
+    flex-direction: column;
+  }
+  
+  .testimonial-card {
+    min-width: unset;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  :root {
+    --space-6: 2.5rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+  }
+  
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .portfolio-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .portfolio-filter {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Stats container */
+  .stats-container {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  /* Contact form */
+  .contact-form .btn {
+    width: 100%;
+  }
+}
+
+/* Height-based media query */
+@media (max-height: 700px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* Print styles */
+@media print {
+  .nav,
+  .footer,
+  .contact-form,
+  .portfolio-filters,
+  .hero-cta {
+    display: none;
+  }
+  
+  body {
+    color: black;
+    background-color: white;
+  }
+  
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 1cm;
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
